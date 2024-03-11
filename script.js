@@ -150,8 +150,8 @@ function backgroundObjectsParallax(event) {
 
   backgroundObjects.forEach((obj, index) => {
     const modifier = modifiers[index];
-    const translateX = (clientX - window.innerWidth / 2) * modifier;
-    const translateY = (clientY - window.innerHeight / 2) * modifier;
+    const translateX = (clientX - window.innerWidth / 2) * modifier * -1;
+    const translateY = (clientY - window.innerHeight / 2) * modifier * -1;
     obj.style.transform = `translate(${translateX}px, ${translateY}px)`;
   });
 }
