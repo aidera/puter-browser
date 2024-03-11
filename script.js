@@ -108,6 +108,7 @@ function renderWebsiteList(items, container) {
   // Iterate over each item and create the necessary elements
   items.forEach((item) => {
     const li = document.createElement('li');
+    li.classList = 'website-element';
     const a = document.createElement('a');
     a.setAttribute('target', '_blank');
     a.href = item.link;
@@ -119,6 +120,8 @@ function renderWebsiteList(items, container) {
     li.appendChild(a);
     container.appendChild(li);
   });
+
+  animateElementsSequentially('.website-element', 100);
 }
 
 /**
@@ -150,6 +153,25 @@ function backgroundObjectsParallax(event) {
     const translateX = (clientX - window.innerWidth / 2) * modifier;
     const translateY = (clientY - window.innerHeight / 2) * modifier;
     obj.style.transform = `translate(${translateX}px, ${translateY}px)`;
+  });
+}
+
+/**
+ * Sequentially animates elements by adding a specified class to each.
+ * This function applies an 'appear' class to a list of elements, one after another,
+ * with a specified delay between each, creating a staggered animation effect.
+ *
+ * @param {string} selector - The CSS selector for targeting the elements to animate.
+ * @param {number} step - The time delay in milliseconds between the animation of each element.
+ * @returns {void} - This function does not return anything.
+ */
+function animateElementsSequentially(selector, step) {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach((element, index) => {
+    setTimeout(() => {
+      element.classList.add('appear');
+    }, index * step);
   });
 }
 
@@ -247,6 +269,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     (event) => getSearchHints(event, output),
     200
   );
+  animateElementsSequentially('.use-appear', 100);
 
   /** Assign event listeners */
   document.addEventListener('click', (event) =>
