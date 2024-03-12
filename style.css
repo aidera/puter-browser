@@ -225,13 +225,13 @@ main {
 }
 
 #background-deco span:nth-child(1) {
-  top: calc(50% - 90px);
-  left: calc(50% - 400px);
-  filter: blur(2px);
+  top: calc(50% - 100px);
+  left: calc(50% - 350px);
+  filter: blur(3px);
 }
 #background-deco span:nth-child(1) img {
-  width: 400px;
-  height: 400px;
+  width: 370px;
+  height: 370px;
   animation: deco-item-1-img 10s ease infinite;
 }
 @keyframes deco-item-1-img {
@@ -313,6 +313,26 @@ main {
   animation: deco-item-5-img 6s ease infinite;
 }
 @keyframes deco-item-5-img {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-6px, 8px) rotate(10deg);
+  }
+}
+
+#background-deco span:nth-child(6) {
+  top: calc(50% - 300px);
+  left: calc(50% + 120px);
+}
+#background-deco span:nth-child(6) img {
+  width: 90px;
+  height: 90px;
+  filter: blur(3px);
+  animation: deco-item-6-img 8s ease infinite;
+}
+@keyframes deco-item-6-img {
   0%,
   100% {
     transform: translate(0, 0);

@@ -146,7 +146,7 @@ function backgroundObjectsParallax(event) {
   const backgroundObjects = document.querySelectorAll('#background-deco span');
 
   // Define an array with modifiers for each background object to control the intensity of the parallax effect
-  const modifiers = [0.03, 0.05, 0.07, 0.1, 0.12];
+  const modifiers = [0.03, 0.05, 0.07, 0.1, 0.12, 0.03];
 
   backgroundObjects.forEach((obj, index) => {
     const modifier = modifiers[index];
